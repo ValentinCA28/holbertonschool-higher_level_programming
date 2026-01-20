@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""Module that contains the safe_print_integer function."""
+
+
 def safe_print_integer(value):
     """Prints an integer with "{:d}".format().
 
