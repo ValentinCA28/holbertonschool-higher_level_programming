@@ -1,0 +1,111 @@
+The ``0-add_integer`` module
+============================
+
+Using ``add_integer``
+---------------------
+
+Import the function:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Test basic addition:
+
+    >>> add_integer(1, 2)
+    3
+
+    >>> add_integer(100, -2)
+    98
+
+Test with default value (b=98):
+
+    >>> add_integer(2)
+    100
+
+Test with floats (should cast to int):
+
+    >>> add_integer(100.3, -2)
+    98
+
+    >>> add_integer(-1.9, 2.5)
+    1
+
+    >>> add_integer(2.9)
+    100
+
+Test with negative numbers:
+
+    >>> add_integer(-5, -5)
+    -10
+
+    >>> add_integer(0, 0)
+    0
+
+Test with large numbers:
+
+    >>> add_integer(999999, 1)
+    1000000
+
+Test error cases - first argument not int or float:
+
+    >>> add_integer("hello", 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer(None, 5)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer([1, 2], 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+Test error cases - second argument not int or float:
+
+    >>> add_integer(5, "hello")
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+    >>> add_integer(3, None)
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+    >>> add_integer(10, [1, 2])
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+Test with no arguments:
+
+    >>> add_integer()
+    Traceback (most recent call last):
+    ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Test with infinity:
+
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer(1, float('inf'))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+
+Test with NaN:
+
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
+
+    >>> add_integer(1, float('nan'))
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
