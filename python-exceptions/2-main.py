@@ -1,6 +1,15 @@
 #!/usr/bin/python3
-uniq_add = __import__('2-uniq_add').uniq_add
+safe_print_list_integers = \
+    __import__('2-safe_print_list_integers').safe_print_list_integers
 
-my_list = [1, 2, 3, 1, 4, 2, 5]
-result = uniq_add(my_list)
-print("Result: {:d}".format(result))
+my_list = [1, 2, 3, 4, 5]
+
+nb_print = safe_print_list_integers(my_list, 2)
+print("nb_print: {:d}".format(nb_print))
+
+my_list = [1, 2, 3, "School", 4, 5, [1, 2, 3]]
+nb_print = safe_print_list_integers(my_list, len(my_list))
+print("nb_print: {:d}".format(nb_print))
+
+nb_print = safe_print_list_integers(my_list, len(my_list) + 2)
+print("nb_print: {:d}".format(nb_print))
