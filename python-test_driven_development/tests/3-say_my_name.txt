@@ -1,0 +1,108 @@
+===========================
+Test for 3-say_my_name.py
+===========================
+
+This module defines a function ``say_my_name(first_name, last_name="")``.
+
+Usage
+=====
+
+Importing the function:
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Test with both first and last name:
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+
+Test with only first name:
+    >>> say_my_name("Bob")
+    My name is Bob 
+
+Test with empty first name:
+    >>> say_my_name("")
+    My name is  
+
+Test with empty last name explicitly:
+    >>> say_my_name("Walter", "")
+    My name is Walter 
+
+Test with long names:
+    >>> say_my_name("Christopher", "Washington")
+    My name is Christopher Washington
+
+Test with special characters:
+    >>> say_my_name("Jean-Pierre", "D'Angelo")
+    My name is Jean-Pierre D'Angelo
+
+Test with numbers in names (should work as they're strings):
+    >>> say_my_name("Agent", "007")
+    My name is Agent 007
+
+Error Cases
+===========
+
+Test with first_name as None:
+    >>> say_my_name(None, "Smith")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+Test with first_name as integer:
+    >>> say_my_name(12, "Smith")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+Test with last_name as integer:
+    >>> say_my_name("John", 12)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+Test with last_name as None:
+    >>> say_my_name("John", None)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+Test with first_name as list:
+    >>> say_my_name(["John"], "Smith")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+Test with last_name as list:
+    >>> say_my_name("John", ["Smith"])
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+Test with first_name as float:
+    >>> say_my_name(3.14, "Smith")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+Test with both parameters as integers:
+    >>> say_my_name(12, 34)
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+Test with no arguments:
+    >>> say_my_name()
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+Test with first_name as boolean:
+    >>> say_my_name(True, "Smith")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+Test with last_name as boolean:
+    >>> say_my_name("John", False)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string

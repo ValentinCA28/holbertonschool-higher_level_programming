@@ -1,63 +1,184 @@
-# Python - Import & Modules
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://www.holbertonschool.com/holberton-logo.png" alt="Holberton School logo"></a>
+</p>
 
-This project covers the fundamentals of importing modules and using functions from other files in Python.
+<h3 align="center">Python - Import & Modules</h3>
 
-## Learning Objectives
+<div align="center">
 
-- How to import functions from another file
-- How to use imported functions
-- How to create a module
-- How to use the built-in function `dir()`
-- How to prevent code from being executed when imported
-- How to use command line arguments with your Python programs
+[![Status](https://img.shields.io/badge/status-active-success.svg)]()
+[![Python](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
-## Requirements
+</div>
 
-- Python 3.12.x
-- All files are executable
-- Code follows PEP8 style guide
-- All files end with a new line
-- First line of all files: `#!/usr/bin/python3`
+---
 
-## Files
+<p align="center"> Maîtriser les imports de modules et l'utilisation de fonctions externes en Python.
+    <br> 
+</p>
 
-### Mandatory Tasks
+## 📝 Table of Contents
 
-| File | Description |
-|------|-------------|
-| `0-add.py` | Imports the function `add(a, b)` from `add_0.py` and prints the result |
-| `1-calculation.py` | Imports functions from `calculator_1.py` and prints the result of basic operations |
-| `2-args.py` | Prints the number of and the list of arguments passed to the program |
-| `3-infinite_add.py` | Prints the result of the addition of all arguments |
-| `4-hidden_discovery.py` | Prints all names defined by the compiled module `hidden_4.pyc` |
-| `5-variable_load.py` | Imports the variable `a` from `variable_load_5.py` and prints its value |
+- [About](#about)
+- [Getting Started](#getting_started)
+- [Usage](#usage)
+- [Files](#files)
+- [Learning Objectives](#learning_objectives)
+- [Built Using](#built_using)
+- [Authors](#authors)
 
-### Module Files
+## 🧐 About <a name = "about"></a>
 
-| File | Description |
-|------|-------------|
-| `add_0.py` | Module containing the `add()` function |
-| `calculator_1.py` | Module containing calculator functions (add, sub, mul, div) |
-| `variable_load_5.py` | Module containing a variable `a` |
+Ce projet fait partie du programme **Holberton School** et couvre les fondamentaux de l'importation de modules en Python. À travers différents exercices pratiques, nous apprenons à :
 
-## Usage
+- Organiser notre code en modules réutilisables
+- Importer et utiliser des fonctions depuis d'autres fichiers
+- Gérer les arguments de ligne de commande
+- Utiliser les bonnes pratiques d'imports en Python
 
-Each file can be executed directly:
+Ce projet constitue une base essentielle pour structurer des applications Python de manière modulaire et maintenable.
+
+## 🏁 Getting Started <a name = "getting_started"></a>
+
+Ces instructions vous permettront d'obtenir une copie du projet et de l'exécuter sur votre machine locale.
+
+### Prerequisites
+
+Pour exécuter ce projet, vous aurez besoin de :
+
+```
+Python 3.12.x
+pycodestyle (pour vérifier le style de code)
+```
+
+### Installation
+
+Clonez le repository :
+
+```bash
+git clone https://github.com/votre-username/holbertonschool-higher_level_programming.git
+cd holbertonschool-higher_level_programming/python-import_modules
+```
+
+Rendez tous les fichiers exécutables :
+
+```bash
+chmod +x *.py
+```
+
+### Requirements
+
+- ✅ Python 3.12.x
+- ✅ Tous les fichiers sont exécutables
+- ✅ Code conforme au guide PEP8 (pycodestyle)
+- ✅ Tous les fichiers se terminent par une nouvelle ligne
+- ✅ Première ligne de tous les fichiers : `#!/usr/bin/python3`
+
+## 🎈 Usage <a name="usage"></a>
+
+Chaque fichier peut être exécuté directement :
+
+### Exemple 1 : Addition simple
 
 ```bash
 ./0-add.py
-./1-calculation.py
-./2-args.py arg1 arg2 arg3
-./3-infinite_add.py 1 2 3 4 5
-./4-hidden_discovery.py
-./5-variable_load.py
+```
+```
+1 + 2 = 3
 ```
 
-## Authors
+### Exemple 2 : Calculatrice
 
-- Alison Amblard
-- Damien Rossi
-- Yanis Leroy
-- Valentin Planchon
+```bash
+./1-calculation.py
+```
+```
+10 + 5 = 15
+10 - 5 = 5
+10 * 5 = 50
+10 / 5 = 2
+```
 
-Holberton School Project
+### Exemple 3 : Arguments en ligne de commande
+
+```bash
+./2-args.py Hello World Python
+```
+```
+3 arguments:
+1: Hello
+2: World
+3: Python
+```
+
+### Exemple 4 : Addition infinie
+
+```bash
+./3-infinite_add.py 10 20 30 40 50
+```
+```
+150
+```
+
+### Exemple 5 : Charger une variable
+
+```bash
+./5-variable_load.py
+```
+```
+98
+```
+
+## 📚 Files <a name = "files"></a>
+
+### Mandatory Tasks
+
+| Fichier | Description |
+|---------|-------------|
+| `0-add.py` | Importe la fonction `add(a, b)` depuis `add_0.py` et affiche le résultat |
+| `1-calculation.py` | Importe des fonctions depuis `calculator_1.py` et effectue des opérations |
+| `2-args.py` | Affiche le nombre et la liste des arguments passés au programme |
+| `3-infinite_add.py` | Affiche la somme de tous les arguments passés |
+| `4-hidden_discovery.py` | Affiche tous les noms définis dans le module compilé `hidden_4.pyc` |
+| `5-variable_load.py` | Importe la variable `a` depuis `variable_load_5.py` et affiche sa valeur |
+
+### Module Files
+
+| Fichier | Description |
+|---------|-------------|
+| `add_0.py` | Module contenant la fonction `add()` |
+| `calculator_1.py` | Module contenant les fonctions de calculatrice (add, sub, mul, div) |
+| `variable_load_5.py` | Module contenant une variable `a` |
+
+## 🎯 Learning Objectives <a name = "learning_objectives"></a>
+
+À la fin de ce projet, vous serez capable d'expliquer :
+
+- ✅ Comment importer des fonctions depuis un autre fichier
+- ✅ Comment utiliser les fonctions importées
+- ✅ Comment créer un module
+- ✅ Comment utiliser la fonction built-in `dir()`
+- ✅ Comment empêcher l'exécution de code lors d'un import
+- ✅ Comment utiliser les arguments de ligne de commande avec Python
+
+## ⛏️ Built Using <a name = "built_using"></a>
+
+- [Python](https://www.python.org/) - Langage de programmation
+- [PEP 8](https://pep8.org/) - Guide de style Python (pycodestyle)
+
+## ✍️ Authors <a name = "authors"></a>
+
+- **Alison Amblard** - [@github](https://github.com/alison-amblard)
+- **Damien Rossi** - [@github](https://github.com/damien-rossi)
+- **Yanis Leroy** - [@github](https://github.com/yanis-leroy)
+- **Valentin Planchon** - [@github](https://github.com/valentin-planchon)
+
+---
+
+<p align="center">
+  Projet réalisé dans le cadre de la formation <strong>Holberton School</strong>
+  <br>
+  © 2026 Alison Amblard, Damien Rossi, Yanis Leroy, Valentin Planchon
+</p>
