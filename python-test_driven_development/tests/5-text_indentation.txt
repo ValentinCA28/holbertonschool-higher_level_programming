@@ -1,0 +1,196 @@
+============================
+Test for 5-text_indentation
+============================
+
+This module defines a text indentation function ``text_indentation(text)``.
+
+Usage
+=====
+
+``text_indentation(...)`` prints a text with 2 new lines after each of
+these characters: . ? and :
+
+::
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Basic usage with period
+========================
+
+::
+
+    >>> text_indentation("Hello.")
+    Hello.
+    <BLANKLINE>
+
+Basic usage with question mark
+===============================
+
+::
+
+    >>> text_indentation("Hello?")
+    Hello?
+    <BLANKLINE>
+
+Basic usage with colon
+=======================
+
+::
+
+    >>> text_indentation("Hello:")
+    Hello:
+    <BLANKLINE>
+
+Multiple sentences
+==================
+
+::
+
+    >>> text_indentation("Hello. How are you? I am fine: thanks.")
+    Hello.
+    <BLANKLINE>
+    How are you?
+    <BLANKLINE>
+    I am fine:
+    <BLANKLINE>
+    thanks.
+    <BLANKLINE>
+
+Text with spaces after delimiters
+==================================
+
+::
+
+    >>> text_indentation("Hello.   How are you?")
+    Hello.
+    <BLANKLINE>
+    How are you?
+    <BLANKLINE>
+
+Multiple spaces after delimiter
+================================
+
+::
+
+    >>> text_indentation("Hello.     World")
+    Hello.
+    <BLANKLINE>
+    World
+
+Text without delimiters
+========================
+
+::
+
+    >>> text_indentation("Hello World")
+    Hello World
+
+Empty string
+============
+
+::
+
+    >>> text_indentation("")
+
+Only spaces
+===========
+
+::
+
+    >>> text_indentation("   ")
+       
+
+Text with newlines
+==================
+
+::
+
+    >>> text_indentation("Hello.\nWorld")
+    Hello.
+    <BLANKLINE>
+    
+    World
+
+Multiple delimiters in a row
+=============================
+
+::
+
+    >>> text_indentation("Hello.?:")
+    Hello.
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+
+Long text
+=========
+
+::
+
+    >>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? Non autem hoc: igitur ne illud quidem.")
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <BLANKLINE>
+    Quonam modo?
+    <BLANKLINE>
+    Utrum igitur tibi litteram videor an totas paginas commovere?
+    <BLANKLINE>
+    Non autem hoc:
+    <BLANKLINE>
+    igitur ne illud quidem.
+    <BLANKLINE>
+
+Text with tabs
+==============
+
+::
+
+    >>> text_indentation("\tHello.\tWorld")
+    	Hello.
+    <BLANKLINE>
+    	World
+
+Invalid Types
+=============
+
+The parameter ``text`` must be a string. Otherwise, a TypeError is raised.
+
+::
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+::
+
+    >>> text_indentation(42)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+::
+
+    >>> text_indentation(3.14)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+::
+
+    >>> text_indentation(['a', 'b'])
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+::
+
+    >>> text_indentation({'key': 'value'})
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Missing argument
+================
+
+::
+
+    >>> text_indentation()
+    Traceback (most recent call last):
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
