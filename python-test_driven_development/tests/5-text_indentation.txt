@@ -99,6 +99,7 @@ Only spaces
 
     >>> text_indentation("   ")
        
+    
 
 Text with newlines
 ==================
@@ -108,7 +109,7 @@ Text with newlines
     >>> text_indentation("Hello.\nWorld")
     Hello.
     <BLANKLINE>
-    
+    <BLANKLINE>
     World
 
 Multiple delimiters in a row
@@ -148,6 +149,7 @@ Text with tabs
 
     >>> text_indentation("\tHello.\tWorld")
     	Hello.
+    <BLANKLINE>
     <BLANKLINE>
     	World
 
