@@ -1,198 +1,101 @@
 ============================
-Test for 5-text_indentation
+Test for 5-text_indentation.py
 ============================
 
-This module defines a text indentation function ``text_indentation(text)``.
+This module defines a function ``text_indentation(text)``.
 
-Usage
-=====
-
-``text_indentation(...)`` prints a text with 2 new lines after each of
-these characters: . ? and :
-
-::
-
+Importing the function:
     >>> text_indentation = __import__('5-text_indentation').text_indentation
 
-Basic usage with period
-========================
+Basic usage
+===========
 
-::
-
-    >>> text_indentation("Hello.")
-    Hello.
-    <BLANKLINE>
-
-Basic usage with question mark
-===============================
-
-::
-
-    >>> text_indentation("Hello?")
-    Hello?
-    <BLANKLINE>
-
-Basic usage with colon
-=======================
-
-::
-
-    >>> text_indentation("Hello:")
-    Hello:
-    <BLANKLINE>
-
-Multiple sentences
-==================
-
-::
-
-    >>> text_indentation("Hello. How are you? I am fine: thanks.")
-    Hello.
-    <BLANKLINE>
-    How are you?
-    <BLANKLINE>
-    I am fine:
-    <BLANKLINE>
-    thanks.
-    <BLANKLINE>
-
-Text with spaces after delimiters
-==================================
-
-::
-
-    >>> text_indentation("Hello.   How are you?")
-    Hello.
+    >>> text_indentation("Hello world. How are you?")
+    Hello world.
     <BLANKLINE>
     How are you?
     <BLANKLINE>
 
-Multiple spaces after delimiter
-================================
+Multiple punctuation
+====================
 
-::
-
-    >>> text_indentation("Hello.     World")
-    Hello.
+    >>> text_indentation("First line: second line. Third line?")
+    First line:
     <BLANKLINE>
-    World
+    second line.
+    <BLANKLINE>
+    Third line?
+    <BLANKLINE>
 
-Text without delimiters
-========================
+Leading and trailing spaces
+===========================
 
-::
-
-    >>> text_indentation("Hello World")
-    Hello World
+    >>> text_indentation("  Space before.  Space after? ")
+    Space before.
+    <BLANKLINE>
+    Space after?
+    <BLANKLINE>
 
 Empty string
 ============
 
-::
-
     >>> text_indentation("")
 
-Only spaces
-===========
+TypeError if not string
+=======================
 
-::
-
-    >>> text_indentation("   ")
-       
-    
-
-Text with newlines
-==================
-
-::
-
-    >>> text_indentation("Hello.\nWorld")
-    Hello.
-    <BLANKLINE>
-    <BLANKLINE>
-    World
-
-Multiple delimiters in a row
-=============================
-
-::
-
-    >>> text_indentation("Hello.?:")
-    Hello.
-    <BLANKLINE>
-    ?
-    <BLANKLINE>
-    :
-    <BLANKLINE>
-
-Long text
-=========
-
-::
-
-    >>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? Non autem hoc: igitur ne illud quidem.")
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <BLANKLINE>
-    Quonam modo?
-    <BLANKLINE>
-    Utrum igitur tibi litteram videor an totas paginas commovere?
-    <BLANKLINE>
-    Non autem hoc:
-    <BLANKLINE>
-    igitur ne illud quidem.
-    <BLANKLINE>
-
-Text with tabs
-==============
-
-::
-
-    >>> text_indentation("\tHello.\tWorld")
-    	Hello.
-    <BLANKLINE>
-    <BLANKLINE>
-    	World
-
-Invalid Types
-=============
-
-The parameter ``text`` must be a string. Otherwise, a TypeError is raised.
-
-::
+    >>> text_indentation(123)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
 
     >>> text_indentation(None)
     Traceback (most recent call last):
+    ...
     TypeError: text must be a string
 
-::
+Multiple lines, multiple punctuations
+=====================================
 
-    >>> text_indentation(42)
-    Traceback (most recent call last):
-    TypeError: text must be a string
+    >>> text_indentation("Lorem ipsum. Quonam modo? Non autem hoc: Plus semper voluptatis?")
+    Lorem ipsum.
+    <BLANKLINE>
+    Quonam modo?
+    <BLANKLINE>
+    Non autem hoc:
+    <BLANKLINE>
+    Plus semper voluptatis?
+    <BLANKLINE>
 
-::
+Mixed spacing and punctuation
+=============================
 
-    >>> text_indentation(3.14)
-    Traceback (most recent call last):
-    TypeError: text must be a string
+    >>> text_indentation(" A. B? C: D")
+    A.
+    <BLANKLINE>
+    B?
+    <BLANKLINE>
+    C:
+    <BLANKLINE>
+    D
 
-::
+Single word, no punctuation
+===========================
 
-    >>> text_indentation(['a', 'b'])
-    Traceback (most recent call last):
-    TypeError: text must be a string
+    >>> text_indentation("Holberton School")
+    Holberton School
 
-::
+Trailing punctuation only
+=========================
 
-    >>> text_indentation({'key': 'value'})
-    Traceback (most recent call last):
-    TypeError: text must be a string
+    >>> text_indentation("End here:")
+    End here:
+    <BLANKLINE>
 
-Missing argument
-================
-
-::
+No arguments
+============
 
     >>> text_indentation()
     Traceback (most recent call last):
+    ...
     TypeError: text_indentation() missing 1 required positional argument: 'text'
