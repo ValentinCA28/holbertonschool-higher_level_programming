@@ -1,0 +1,108 @@
+===========================
+Test file for 1-my_list.py
+===========================
+
+Importing the class:
+    >>> MyList = __import__('1-my_list').MyList
+
+Test 1: Basic list with positive integers
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+
+Test 2: List with negative integers
+    >>> my_list = MyList()
+    >>> my_list.append(-1)
+    >>> my_list.append(-4)
+    >>> my_list.append(-2)
+    >>> my_list.print_sorted()
+    [-4, -2, -1]
+
+Test 3: List with mixed positive and negative integers
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(-3)
+    >>> my_list.append(5)
+    >>> my_list.append(-7)
+    >>> my_list.append(0)
+    >>> my_list.print_sorted()
+    [-7, -3, 0, 1, 5]
+
+Test 4: Empty list
+    >>> my_list = MyList()
+    >>> my_list.print_sorted()
+    []
+
+Test 5: List with one element
+    >>> my_list = MyList()
+    >>> my_list.append(42)
+    >>> my_list.print_sorted()
+    [42]
+
+Test 6: List already sorted
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.print_sorted()
+    [1, 2, 3]
+
+Test 7: List sorted in reverse order
+    >>> my_list = MyList()
+    >>> my_list.append(5)
+    >>> my_list.append(4)
+    >>> my_list.append(3)
+    >>> my_list.append(2)
+    >>> my_list.append(1)
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+
+Test 8: List with duplicate values
+    >>> my_list = MyList()
+    >>> my_list.append(3)
+    >>> my_list.append(1)
+    >>> my_list.append(3)
+    >>> my_list.append(2)
+    >>> my_list.append(1)
+    >>> my_list.print_sorted()
+    [1, 1, 2, 3, 3]
+
+Test 9: List initialized with values
+    >>> my_list = MyList([3, 1, 2])
+    >>> my_list.print_sorted()
+    [1, 2, 3]
+
+Test 10: Verify MyList is a subclass of list
+    >>> my_list = MyList()
+    >>> isinstance(my_list, list)
+    True
+
+Test 11: Verify the object has the print_sorted method
+    >>> my_list = MyList()
+    >>> hasattr(my_list, 'print_sorted')
+    True
+
+Test 12: List with large numbers
+    >>> my_list = MyList()
+    >>> my_list.append(1000000)
+    >>> my_list.append(1)
+    >>> my_list.append(500000)
+    >>> my_list.print_sorted()
+    [1, 500000, 1000000]
+
+Test 13: List with zeros
+    >>> my_list = MyList()
+    >>> my_list.append(0)
+    >>> my_list.append(0)
+    >>> my_list.append(0)
+    >>> my_list.print_sorted()
+    [0, 0, 0]
