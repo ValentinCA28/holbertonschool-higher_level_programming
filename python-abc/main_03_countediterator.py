@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+"""Module that defines functions and classes."""
+
 from task_03_countediterator import CountedIterator
 
 data = [1, 2, 3, 4]
