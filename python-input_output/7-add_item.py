@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Module that defines functions and classes."""
+
 
 import sys
 
@@ -9,7 +11,7 @@ filename = "add_item.json"
 
 try:
     my_list = load_from_json_file(filename)
-except:
+except BaseException:
     my_list = []
 
 my_list.extend(sys.argv[1:])
