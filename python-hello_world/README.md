@@ -1,67 +1,121 @@
 # Python - Hello, World
 
-This project is an introduction to Python programming, covering the basics of printing, string manipulation, and Python's philosophy.
+![Python](https://img.shields.io/badge/Language-Python-3776AB.svg?logo=python&logoColor=white)
+![Holberton](https://img.shields.io/badge/School-Holberton-red.svg)
 
-## Learning Objectives
+> Introduction a la programmation Python : affichage, variables, f-strings, slicing et philosophie du langage.
 
-- Why Python programming is awesome
-- Who created Python
-- Who is Guido van Rossum
-- Where does the name Python come from
-- What is the Zen of Python
-- How to use the Python interpreter
-- How to print text and variables using print
-- How to use strings
-- What are indexing and slicing in Python
-- What is the official Python coding style and how to check your code with pycodestyle
+---
 
-## Requirements
+## Objectifs d'apprentissage
 
-- Python 3.12.x
-- All files are executable
-- Code follows PEP8 style guide
-- All files end with a new line
-- First line of all files: `#!/usr/bin/python3`
+- Utiliser `print` pour afficher du texte et des variables
+- Formater des nombres et des chaines avec les f-strings
+- Manipuler les chaines de caracteres : slicing, concatenation, repetition
+- Comprendre l'indexation positive et negative en Python
+- Decouvrir le Zen of Python
 
-## Files
+---
 
-### Mandatory Tasks
+## Stack technique
 
-| File | Description |
-|------|-------------|
-| `2-print.py` | Prints exactly "Programming is like building a multilingual puzzle" |
-| `3-print_number.py` | Prints the integer stored in the variable number, followed by "Battery street" |
-| `4-print_float.py` | Prints the float stored in the variable number with 2 decimal places |
-| `5-print_string.py` | Prints a string 3 times, then its first 9 characters |
-| `6-concat.py` | Concatenates two strings |
-| `7-edges.py` | Extracts specific parts of a string (edges) |
-| `8-concat_edges.py` | Creates a new sentence by extracting parts of a string |
-| `9-easter_egg.py` | Prints "The Zen of Python" by Tim Peters |
+| Outil | Version | Role | Installation |
+|-------|---------|------|-------------|
+| ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) | 3.12.x | Langage de programmation | `sudo apt install python3` |
 
-## Usage
+---
 
-Each file can be executed directly:
+## Taches
 
-```bash
-./2-print.py
-./3-print_number.py
-./4-print_float.py
-./5-print_string.py
-./6-concat.py
-./7-edges.py
-./8-concat_edges.py
-./9-easter_egg.py
+### 0. Print a specific string
+> **Objectif** : Afficher une chaine exacte avec `print`
+
+```python
+#!/usr/bin/python3
+print("\"Programming is like building a multilingual puzzle")
 ```
 
-## The Zen of Python
+### 1. Print integer with f-string
+> **Objectif** : Utiliser les f-strings pour formater un entier dans une phrase
 
-Run `./9-easter_egg.py` or type `python3 -m this` to see the Zen of Python, a collection of guiding principles for writing computer programs in Python.
+```python
+#!/usr/bin/python3
+number = 98
+print(f"{number} Battery street")
+```
 
-## Authors
+### 2. Print float with precision
+> **Objectif** : Formater un float avec une precision de 2 decimales
 
-- Alison Amblard
-- Damien Rossi
-- Yanis Leroy
-- Valentin Planchon
+```python
+#!/usr/bin/python3
+number = 3.14159
+print(f"Float: {number:.2f}")
+```
 
-Holberton School Project
+### 3. Print string multiple times
+> **Objectif** : Repeter une chaine et extraire une sous-chaine par slicing
+
+```python
+#!/usr/bin/python3
+str = "Holberton School"
+print(f"{str * 3}")
+print(f"{str[:9]}")
+```
+
+### 4. Concatenation with f-string
+> **Objectif** : Concatener deux variables dans une phrase formatee
+
+```python
+#!/usr/bin/python3
+str1 = "Holberton"
+str2 = "School"
+str1 = f"Welcome to {str1} {str2}!"
+print(str1)
+```
+
+### 5. String slicing - edges
+> **Objectif** : Extraire les premiers, derniers et caracteres du milieu d'une chaine
+
+```python
+#!/usr/bin/python3
+word = "Holberton"
+word_first_3 = word[:3]
+word_last_2 = word[-2:]
+middle_word = word[1:-1]
+```
+
+### 6. Concat edges
+> **Objectif** : Construire une nouvelle phrase en extrayant des portions d'une chaine longue
+
+```python
+#!/usr/bin/python3
+str = "Python is an interpreted, interactive, object-oriented programming language..."
+str = str[39:67] + str[107:112] + str[0:6]
+# Concatenation par slicing
+```
+
+### 7. Easter egg - Zen of Python
+> **Objectif** : Decouvrir les principes fondateurs de Python via le module `this`
+
+```python
+#!/usr/bin/python3
+import this
+# Affiche le Zen of Python
+```
+
+---
+
+## Auteur
+
+- **Valentin Planchon**
+
+---
+
+<div align="center">
+
+![Holberton School](https://img.shields.io/badge/HOLBERTON%20SCHOOL-Python%20Hello%20World-white?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE0LjY2NyA4QzE0LjY2NyA0LjY4NiAxMi4zMTQgMi4zMzMzIDkgMi4zMzMzQzUuNjg2NyAyLjMzMzMgMy4zMzMzIDQuNjg2IDMuMzMzIDhDMi4xNDYgOCAyIDguMTQ2IDAgOEMwIDEyLjMxNCAyLjM1NCAxNC42NjcgNi42NjcgMTQuNjY3QzYuNjY3IDE1LjE4NiA2LjkzMyAxNS41MzMgNy4zMzMzIDE1Ljc4N0M3LjczMzMgMTYuMDMzIDguMTMzMyAxNi4xNiA4LjY2NjcgMTYuMTYgOS4yIDkuNTMzMyAxMC4xMzMgMTYuMTYgMTAuNjY3IDE2LjE2QzExLjIgMTYuMTYgMTEuNiAxNi4wMzMgMTIuMDY3IDE1Ljc4N0MxMi41MzMgMTUuNTMzIDEyLjggMTUuMTg2IDEyLjggMTQuNjY3QzE0LjY2NyAxNC42NjcgMTQuNjY3IDguNjY3IDE0LjY2NyA4WiIgZmlsbD0iI0ZGRkZGRiIvPgo8L3N2Zz4K&labelColor=c41e3a&color=36393f) <img src="../images/holberton_logo.png" alt="Holberton Logo" width="34">
+
+[Retour au projet principal](../)
+
+</div>
